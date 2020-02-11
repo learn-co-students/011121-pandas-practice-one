@@ -24,14 +24,7 @@ boston = load_boston()
 
 ```
 
-### Assign the data and feature_names to variables
-
-
-```python
-
-```
-
-### Create a dataframe with the array ```features``` and the correct column names
+### Create a dataframe with values from `data` and the correct column names from `feature_names`
 
 
 ```python
