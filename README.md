@@ -1,15 +1,19 @@
 # Pandas 101
 
-This checkpoint contains many of the basic tasks you might need to do with Pandas!  At the end of an hour, commit and push what you have.  Then you can keep working on this later if you want to
+This checkpoint contains many of the basic tasks you might need to do with Pandas!  At the end of an hour, commit and push what you have (remember, you can always return to this book later for practice)
 
 
 ```python
-# Run this cell without changes
+# Run this import cell without changes
+
+#data manipulation
 import pandas as pd
+
+#dataset
 from sklearn.datasets import load_boston
 ```
 
-### Loading in the Boston Housing Dataset
+## Loading in the Boston Housing Dataset
 
 
 ```python
@@ -17,97 +21,107 @@ from sklearn.datasets import load_boston
 boston = load_boston()
 ```
 
-### Print out the metadata for the dataset contained in 'DESCR'
+The variable `boston` is now a dictionary with several key-value pairs containing different aspects of the Boston Housing dataset.  
+
+#### What are the keys to `boston`?  
 
 
 ```python
-
+# Your code here
 ```
 
-### Create a dataframe with values from `data` and the correct column names from `feature_names`
+#### Use the print command to print out the metadata for the dataset contained in the key `DESCR`
 
 
 ```python
-
+# Your code here
 ```
 
-### Add a MEDV column to your dataframe using the values from target
+#### Create a dataframe named "df_boston" with data contained in the key `data`.  Make the column names of `df_boston` the values from the key `feature_names`
 
 
 ```python
-
+# Your code here
 ```
 
-### Look at the first 5 rows of the dataframe
+The key `target` contains the median value of a house.  
+
+#### Add a column named "MEDV" to your dataframe which contains the median value of a house
 
 
 ```python
-
+# Your code here
 ```
 
-### Show summary statistics of all rows
+## Data Exploration
+
+#### Show the first 5 rows of the dataframe with the `head` method
 
 
 ```python
-
+# Your code here
 ```
 
-### Check if there are null values and the datatypes of all columns using the info method
+#### Show the summary statistics of all columns with the `describe` method
 
 
 ```python
-
+# Your code here
 ```
 
-### Select the % lower status of the population column
+#### Check the datatypes of all columns, and see how many nulls are in each column, using the `info` method
 
 
 ```python
-
+# Your code here
 ```
 
-### Select rows 10-20 from the AGE, NOX, and MEDV columns
+## Data Selection
+
+#### Select all values from the column that contains the weighted distances to five Boston employment centres
+
+*Hint: you printed out the information about what information variables contain in a cell above*
 
 
 ```python
-
+# Your code here
 ```
 
-### Select all values from the INDUS column with a proportion of non-retail business acres per town less than 2
+#### Select rows 10-20 from the AGE, NOX, and MEDV columns
 
 
 ```python
-
+# Your code here
 ```
 
-### Select all rows where NOX is greater than .7 and CRIM is greater than 8
+#### Select all rows where NOX is greater than .7 and CRIM is greater than 8
 
 
 ```python
-
+# Your code here
 ```
 
-### Add a column called ONES to the dataframe which consists of all 1s
+## Data Manipulation
+
+#### Add a column to the dataframe called "MEDV*TAX" which is the product of MEDV and TAX
 
 
 ```python
-
+# Your code here
 ```
 
-### Add a column to the dataframe called MEDV_times_TAX which is the product of MEDV and TAX
+#### What is the average median value of houses located on the Charles River?
 
 
 ```python
-
+# Your code here
 ```
 
-### What is the average MEDV of houses located on the Charles River
+#### Write a sentence that answers the above question
 
 
 ```python
-
-
-#28.44
+# Your written answer here
 ```
 
 
