@@ -123,8 +123,3 @@ The key `target` contains the median value of a house.
 ```python
 # Your written answer here
 ```
-
-
-```python
-
-```
