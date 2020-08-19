@@ -16,7 +16,12 @@ from sklearn.datasets import load_boston
 
 ```python
 #__SOLUTION__
+# Run this import cell without changes
+
+#data manipulation
 import pandas as pd
+
+#dataset
 from sklearn.datasets import load_boston
 ```
 
@@ -1114,9 +1119,4 @@ val
 
 
 '''The average median value of houses located along the Charles River is $28,440'''
-```
-
-
-```python
-
 ```
