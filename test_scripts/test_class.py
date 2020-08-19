@@ -98,7 +98,7 @@ class Test():
         }
 
         self.obj_tests_dict_kwargs = {
-            np.ndarray: {'err_msg': **kwargs['statement']},
+            np.ndarray: {},
             pd.core.series.Series: {},
             pd.core.frame.DataFrame: {'check_like': True},
             types.MethodType: {},
