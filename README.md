@@ -13,24 +13,11 @@ import pandas as pd
 from sklearn.datasets import load_boston
 ```
 
-
-```python
-#__SOLUTION__
-import pandas as pd
-from sklearn.datasets import load_boston
-```
-
 ## Loading in the Boston Housing Dataset
 
 
 ```python
 # Run this cell without changes
-boston = load_boston()
-```
-
-
-```python
-#__SOLUTION__
 boston = load_boston()
 ```
 
@@ -40,13 +27,19 @@ The variable `boston` is now a dictionary with several key-value pairs containin
 
 
 ```python
-# Your code here
-```
+### BEGIN SOLUTION
 
 
-```python
-#__SOLUTION__
+from test_scripts.test_class import Test
+test = Test()
+
 boston.keys()
+
+test.save()
+
+
+
+### END SOLUTION
 ```
 
 
@@ -56,17 +49,29 @@ boston.keys()
 
 
 
+
+```python
+### BEGIN HIDDEN TESTS
+
+test.run_test()
+
+
+### END HIDDEN TESTS
+```
+
 #### Use the print command to print out the metadata for the dataset contained in the key `DESCR`
 
 
 ```python
-# Your code here
-```
+### BEGIN SOLUTION
 
-
-```python
-#__SOLUTION__
 print(boston['DESCR'])
+
+test.save()
+
+
+
+### END SOLUTION
 ```
 
     .. _boston_dataset:
@@ -122,18 +127,40 @@ print(boston['DESCR'])
     
 
 
+
+```python
+### BEGIN HIDDEN TESTS
+
+test.run_test()
+
+
+### END HIDDEN TESTS
+```
+
 #### Create a dataframe named "df_boston" with data contained in the key `data`.  Make the column names of `df_boston` the values from the key `feature_names`
 
 
 ```python
-# Your code here
+### BEGIN SOLUTION
+
+    
+df_boston = pd.DataFrame(boston['data'], columns=boston['feature_names'])
+
+test.save()
+
+
+
+### END SOLUTION
 ```
 
 
 ```python
-#__SOLUTION__
-    
-df_boston = pd.DataFrame(boston['data'], columns=boston['feature_names'])
+### BEGIN HIDDEN TESTS
+
+test.run_test()
+
+
+### END HIDDEN TESTS
 ```
 
 The key `target` contains the median value of a house.  
@@ -142,14 +169,26 @@ The key `target` contains the median value of a house.
 
 
 ```python
-# Your code here
+### BEGIN SOLUTION
+
+
+df_boston['MEDV'] = boston['target']
+
+test.save()
+
+
+
+### END SOLUTION
 ```
 
 
 ```python
-#__SOLUTION__
+### BEGIN HIDDEN TESTS
 
-df_boston['MEDV'] = boston['target']
+test.run_test()
+
+
+### END HIDDEN TESTS
 ```
 
 ## Data Exploration
@@ -158,13 +197,15 @@ df_boston['MEDV'] = boston['target']
 
 
 ```python
-# Your code here
-```
+### BEGIN SOLUTION
 
-
-```python
-#__SOLUTION__
 df_boston.head()
+
+test.save()
+
+
+
+### END SOLUTION
 ```
 
 
@@ -296,17 +337,29 @@ df_boston.head()
 
 
 
+
+```python
+### BEGIN HIDDEN TESTS
+
+test.run_test()
+
+
+### END HIDDEN TESTS
+```
+
 #### Show the summary statistics of all columns with the `describe` method
 
 
 ```python
-# Your code here
-```
+### BEGIN SOLUTION
 
-
-```python
-#__SOLUTION__
 df_boston.describe()
+
+test.save()
+
+
+
+### END SOLUTION
 ```
 
 
@@ -489,18 +542,30 @@ df_boston.describe()
 
 
 
+
+```python
+### BEGIN HIDDEN TESTS
+
+test.run_test()
+
+
+### END HIDDEN TESTS
+```
+
 #### Check the datatypes of all columns, and see how many nulls are in each column, using the `info` method
 
 
 ```python
-# Your code here
-```
+### BEGIN SOLUTION
 
-
-```python
-#__SOLUTION__
 
 df_boston.info()
+
+test.save()
+
+
+
+### END SOLUTION
 ```
 
     <class 'pandas.core.frame.DataFrame'>
@@ -526,6 +591,16 @@ df_boston.info()
     memory usage: 55.5 KB
 
 
+
+```python
+### BEGIN HIDDEN TESTS
+
+test.run_test()
+
+
+### END HIDDEN TESTS
+```
+
 ## Data Selection
 
 #### Select all values from the column that contains the weighted distances to five Boston employment centres
@@ -534,13 +609,15 @@ df_boston.info()
 
 
 ```python
-# Your code here
-```
+### BEGIN SOLUTION
 
-
-```python
-#__SOLUTION__
 df_boston['DIS']
+
+test.save()
+
+
+
+### END SOLUTION
 ```
 
 
@@ -561,17 +638,29 @@ df_boston['DIS']
 
 
 
+
+```python
+### BEGIN HIDDEN TESTS
+
+test.run_test()
+
+
+### END HIDDEN TESTS
+```
+
 #### Select rows 10-20 from the AGE, NOX, and MEDV columns
 
 
 ```python
-# Your code here
-```
+### BEGIN SOLUTION
 
-
-```python
-#__SOLUTION__
 df_boston.loc[10:20, ['AGE', 'NOX', 'MEDV']]
+
+test.save()
+
+
+
+### END SOLUTION
 ```
 
 
@@ -673,21 +762,33 @@ df_boston.loc[10:20, ['AGE', 'NOX', 'MEDV']]
 
 
 
+
+```python
+### BEGIN HIDDEN TESTS
+
+test.run_test()
+
+
+### END HIDDEN TESTS
+```
+
 #### Select all rows where NOX is greater than .7 and CRIM is greater than 8
 
 
 ```python
-# Your code here
-```
+### BEGIN SOLUTION
 
-
-```python
-#__SOLUTION__
 mask = (
     (df_boston['NOX']>.7) &
     (df_boston['CRIM']>8)
 )
 df_boston[mask]
+
+test.save()
+
+
+
+### END SOLUTION
 ```
 
 
@@ -1057,31 +1158,49 @@ df_boston[mask]
 
 
 
+
+```python
+### BEGIN HIDDEN TESTS
+
+test.run_test()
+
+
+### END HIDDEN TESTS
+```
+
 ## Data Manipulation
 
 #### Add a column to the dataframe called "MEDV*TAX" which is the product of MEDV and TAX
 
 
 ```python
-# Your code here
+### BEGIN SOLUTION
+
+df_boston['MEDV*TAX'] = df_boston['MEDV']*df_boston['TAX']
+
+test.save()
+
+
+
+### END SOLUTION
 ```
 
 
 ```python
-#__SOLUTION__
-df_boston['MEDV*TAX'] = df_boston['MEDV']*df_boston['TAX']
+### BEGIN HIDDEN TESTS
+
+test.run_test()
+
+
+### END HIDDEN TESTS
 ```
 
 #### What is the average median value of houses located on the Charles River?
 
 
 ```python
-# Your code here
-```
+### BEGIN SOLUTION
 
-
-```python
-#__SOLUTION__
 
 val = (
     df_boston
@@ -1092,6 +1211,12 @@ val = (
 
 val = val*1000
 val
+
+test.save()
+
+
+
+### END SOLUTION
 ```
 
 
@@ -1101,22 +1226,22 @@ val
 
 
 
-#### Write a sentence that answers the above question
-
 
 ```python
-# Your written answer here
+### BEGIN HIDDEN TESTS
+
+test.run_test()
+
+
+### END HIDDEN TESTS
 ```
 
+#### Write a sentence that answers the above question
 
-```python
-#__SOLUTION__
+=== BEGIN MARK SCHEME ===
+
 
 
 '''The average median value of houses located along the Charles River is $28,440'''
-```
 
-
-```python
-
-```
+=== END MARK SCHEME ===
