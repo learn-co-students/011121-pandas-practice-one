@@ -4,7 +4,12 @@ This checkpoint contains many of the basic tasks you might need to do with Panda
 
 
 ```python
+# Run this import cell without changes
+
+#data manipulation
 import pandas as pd
+
+#dataset
 from sklearn.datasets import load_boston
 ```
 
